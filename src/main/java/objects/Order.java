@@ -1,11 +1,7 @@
 package objects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
-
-import static junit.framework.TestCase.assertEquals;
-
 
 public class Order {
     WebDriver driver;
@@ -31,7 +27,7 @@ public class Order {
     By surnameField = By.xpath("//input[@placeholder='* Фамилия']");
 
     // найти и кликнуть на поле Имя
-    public void cliсkSurnameField( ) {
+    public void cliсkSurnameField() {
         driver.findElement(surnameField).click();
     }
 
@@ -160,6 +156,7 @@ public class Order {
     public void clickYesButton() {
         driver.findElements(orderButton).get(3).click();
     }
+
     // Кнопка НЕТ
     public void clickNoButton() {
         driver.findElements(orderButton).get(2).click();
@@ -167,6 +164,7 @@ public class Order {
 
     // поиск эелемента и получение его текста для сравнения его с текстом оформленного заказа
     public String orderSuccessText = "Заказ оформлен";
+
     public String shouldBeTwoStringsEqual() {
         return driver.findElement(By.className("Order_ModalHeader__3FDaJ")).getText();
     }
